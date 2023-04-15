@@ -1,0 +1,58 @@
+{% extends 'base.html' %} 
+{% block title %}Home Page{% endblock %}
+{% block log %}<a href="{% url 'logout' %}">Logout</a>{% endblock %}
+{% block content %}
+<section id="hero">
+  <h1>Welcome to SD Shopping Center {{session.userinfo.name}}</h1>
+  <p>Shop the latest trends in fashion, electronics, home goods and more!</p>
+  <button>Shop Now</button>
+</section>
+<section id="featured">
+  <h2>Featured Products</h2>
+  <div class="product">
+    <img src="product1.jpg" alt="Product 1" />
+    <h3>Product 1</h3>
+    <p>$19.99</p>
+  </div>
+  <div class="product">
+    <img src="product2.jpg" alt="Product 2" />
+    <h3>Product 2</h3>
+    <p>$29.99</p>
+  </div>
+  <div class="product">
+    <img src="product3.jpg" alt="Product 3" />
+    <h3>Product 3</h3>
+    <p>$39.99</p>
+  </div>
+</section>
+<section id="blog">
+  <h2>Latest from our Blog</h2>
+  <div class="post">
+    <img src="blog1.jpg" alt="Blog Post 1" />
+    <h3>Blog Post 1</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <a href="#">Read More</a>
+  </div>
+  <div class="post">
+    <img src="blog2.jpg" alt="Blog Post 2" />
+    <h3>Blog Post 2</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <a href="#">Read More</a>
+  </div>
+  <div class="post">
+    <img src="blog3.jpg" alt="Blog Post 3" />
+    <h3>Blog Post 3</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+    <a href="#">Read More</a>
+  </div>
+</section>
+{% endblock %}

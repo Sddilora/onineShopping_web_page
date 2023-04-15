@@ -44,12 +44,29 @@ def logout(request):
         ),
     )
     
+# def index(request):
+#     return render(
+#         request,
+#         "index.html",
+#         context={
+#             "session": request.session.get("user"),
+#             "pretty": json.dumps(request.session.get("user"), indent=4),
+#         },
+#     )
+
 def index(request):
-    return render(
-        request,
-        "index.html",
-        context={
-            "session": request.session.get("user"),
-            "pretty": json.dumps(request.session.get("user"), indent=4),
-        },
-    )
+    if request.session.get("user"):
+        return render(request, "home.html", context={ "session": request.session.get("user") })
+    else:
+        return render(request, "visitor.html")
+    
+# def profile(request):
+#     return render(
+#         request,
+#         "profile.html",
+#         context={
+#             "session": request.session.get("user"),
+#             "pretty": json.dumps(request.session.get("user"), indent=4),
+#         },
+#     )
+

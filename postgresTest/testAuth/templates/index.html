@@ -1,8 +1,10 @@
+{% load static %}
 
 <html>
   <head>
     <meta charset="utf-8" />
     <title>Auth0 Example</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
   </head>
   <body>
     {% if session %}
