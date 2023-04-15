@@ -1,8 +1,17 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
+{% load static %} 
 {% block title %}Home Page{% endblock %}
-{% block log %}<a href="{% url 'logout' %}">Logout</a>{% endblock %}
+{% block dropdown-content %}
+<div class="dropdown-content">
+  <a href="#">Favorites</a>
+  <a href="#">Cart</a>
+  <a href="{% url 'logout' %}">Logout</a>
+</div>
+{% endblock %}
+
 {% block content %}
 <section id="hero">
+  {% comment %} <a href="{% url 'logout' %}">Logout</a>{% endblock %} {% endcomment %}
   <h1>Welcome to SD Shopping Center {{session.userinfo.name}}</h1>
   <p>Shop the latest trends in fashion, electronics, home goods and more!</p>
   <button>Shop Now</button>

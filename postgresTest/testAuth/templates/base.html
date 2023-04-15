@@ -9,17 +9,17 @@
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Cart</a></li>
-          <li>{% block log %}{% endblock %}</li>
-        </ul>
-      </nav>
-    </header>
+    <div class="navbar">
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">About</a>
+      <div class="dropdown">
+        <button class="dropbtn">My Account
+          <i class="fa fa-caret-down"></i>
+        </button>
+        {% block dropdown-content %}{% endblock %}
+      </div>
+    </div>
 
     <div class="container">{% block content %} {% endblock %}</div>
 

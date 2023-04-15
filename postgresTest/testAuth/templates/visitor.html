@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 {% block title %}Visitor Page{% endblock %}
-{% block log %}<a href="{% url 'login' %}">Login</a>{% endblock %}
+{% block dropdown-content %}
+<div class="dropdown-content">
+  <a href="#">Link 1</a>
+  <a href="#">Link 2</a>
+  <a href="{% url 'login' %}">Login</a>
+</div>
+{% endblock %}
+
 
 {% block content %}
-{% comment %} <p><a href="{% url 'login' %}">Login</a></p> {% endcomment %}
 {% endblock %}
