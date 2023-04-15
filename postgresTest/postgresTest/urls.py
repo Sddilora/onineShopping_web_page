@@ -1,5 +1,5 @@
 """
-URL configuration for onlineShopping project.
+URL configuration for postgresTest project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -16,12 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-     path("", views.index, name="index"),
-    path("login/", views.login, name="login"),
-    path("logout/", views.logout, name="logout"),
-    path("callback/", views.callback, name="callback"),
+    path('', include('testAuth.urls'))
 ]
