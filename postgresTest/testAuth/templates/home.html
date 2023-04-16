@@ -12,32 +12,31 @@
 
 {% block content %}
 <section id="hero">
-  {% comment %} <a href="{% url 'logout' %}">Logout</a>{% endblock %} {% endcomment %}
-  <h1>Welcome to SD Shopping Center {{session.userinfo.name}}</h1>
+  <h1 style="color:#4a4545">Welcome to SD Shopping Center {{session.userinfo.name}}</h1>
   <p>Shop the latest trends in fashion, electronics, home goods and more!</p>
 </section>
 <section id="featured">
-  <h2>Featured Products</h2>
+  <h2 style="color: #30937c">Featured Products</h2>
   <div class="product">
-    <img src="product1.jpg" alt="Product 1" />
+    <img src="https://img.icons8.com/external-photo3ideastudio-lineal-photo3ideastudio/1x/external-clothes-laundry-photo3ideastudio-lineal-photo3ideastudio.png" alt="Product 1" />
     <h3>Product 1</h3>
     <p>$19.99</p>
   </div>
   <div class="product">
-    <img src="product2.jpg" alt="Product 2" />
+    <img src="https://img.icons8.com/ios/1x/fast-moving-consumer-goods.png" alt="Product 2" />
     <h3>Product 2</h3>
     <p>$29.99</p>
   </div>
   <div class="product">
-    <img src="product3.jpg" alt="Product 3" />
+    <img src="https://img.icons8.com/ios/1x/car-service.png" alt="Product 3" />
     <h3>Product 3</h3>
     <p>$39.99</p>
   </div>
 </section>
 <section id="blog">
-  <h2>Latest from our Blog</h2>
+  <h2 style="color: #30937c">Latest from our Blog</h2>
   <div class="post">
-    <img src="blog1.jpg" alt="Blog Post 1" />
+    {% comment %} <img src="blog1.jpg" alt="Blog Post 1" /> {% endcomment %}
     <h3>Blog Post 1</h3>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -46,7 +45,7 @@
     <a href="#">Read More</a>
   </div>
   <div class="post">
-    <img src="blog2.jpg" alt="Blog Post 2" />
+    {% comment %} <img src="blog2.jpg" alt="Blog Post 2" /> {% endcomment %}
     <h3>Blog Post 2</h3>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
@@ -55,7 +54,7 @@
     <a href="#">Read More</a>
   </div>
   <div class="post">
-    <img src="blog3.jpg" alt="Blog Post 3" />
+    {% comment %} <img src="blog3.jpg" alt="Blog Post 3" /> {% endcomment %}
     <h3>Blog Post 3</h3>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
