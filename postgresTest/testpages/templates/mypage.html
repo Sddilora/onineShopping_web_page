@@ -1,0 +1,217 @@
+{% extends 'base.html' %}
+
+{% block title %}My Page{% endblock %}
+
+{% block style %}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header-container {
+    max-height: 50px;
+    max-width: 1200px;
+    min-width: 630px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header {
+    max-height: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.logo-mypage {
+    width: auto;
+    height: 30px;
+}
+
+.search {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.search input::hover {
+    border: 1px solid #30937c;
+}
+
+.search input[type=text] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #30937c;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #f8f8f8;
+}
+
+.search button {
+    display: none;
+}
+
+.search-input::placeholder {
+    color: #30937c;
+}
+.profile {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin: 20px;
+}
+
+.profile img {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.profile h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.profile p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.ratings {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ratings img {
+    max-width: 50px;
+    margin-right: 10px;
+}
+
+.ratings p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    margin-bottom: 20px;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+.product img {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.product h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.product p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.product button {
+    background-color:  #30937c;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.product button:hover {
+    background-color: #ff6600;
+}
+
+{% endblock %}
+
+{% block dropdown-content %}
+<div class="dropdown-content">
+  <a href="{% url 'testpages/mypage' %}">My Page</a>
+  <a href="#">Favorites</a>
+  <a href="#">Cart</a>
+  <a href="#">Settings</a>
+  <a href="{% url 'logout' %}">Logout</a>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="header-container">
+    <div class="header">
+        <img class="logo-mypage" src="https://img.icons8.com/ios-glyphs/1x/github-2.png" alt="Logo">
+        <div class="search">
+            <input class= "search-input" type="text" placeholder="Search products...">
+            <button>Search</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+	<div class="profile">
+		<img src="https://img.icons8.com/clouds/1x/starbucks.png" alt="Photo">
+		<h1>{{session.userinfo.name}}</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod augue at nulla mollis dapibus. Vivamus tincidunt justo in augue consequat, sed gravida nulla vulputate.</p>
+		<div class="ratings">
+			<img src="star.png" alt="Rating">
+			<p>4.5</p>
+		</div>
+		<div class="products">
+			<div class="product">
+				<img src="product1.jpg" alt="Product 1">
+				<h2>Product 1</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod augue at nulla mollis dapibus. Vivamus tincidunt justo in augue consequat, sed gravida nulla vulputate.</p>
+				<button>Add to Cart</button>
+			</div>
+			<div class="product">
+				<img src="product2.jpg" alt="Product 2">
+				<h2>Product 2</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod augue at nulla mollis dapibus. Vivamus tincidunt justo in augue consequat, sed gravida nulla vulputate.</p>
+				<button>Add to Cart</button>
+			</div>
+			<div class="product">
+				<img src="product3.jpg" alt="Product 3">
+				<h2>Product 3</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod augue at nulla mollis dapibus. Vivamus tincidunt justo in augue consequat, sed gravida nulla vulputate.</p>
+				<button>Add to Cart</button>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

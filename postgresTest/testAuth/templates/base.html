@@ -7,14 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'style.css' %}" />
     <title>{% block title %}{% endblock %}</title>
+    <style>{% block style %}{% endblock %}</style>
   </head>
   <body>
     <div class="navbar">
-      <a href="#">Home</a>
+      <a href="{% url 'home' %}">Home</a>
       <a href="#">Shop</a>
       <a href="#">About</a>
       <div class="dropdown">
-        <button class="dropbtn">My Account
+        <button class="dropbtn" >My Account
           <i class="fa fa-caret-down"></i>
         </button>
         {% block dropdown-content %}{% endblock %}

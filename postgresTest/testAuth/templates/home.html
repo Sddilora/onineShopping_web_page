@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
-{% load static %} 
 {% block title %}Home Page{% endblock %}
 {% block dropdown-content %}
 <div class="dropdown-content">
+  <a href="{% url 'testpages/mypage' %}">My Page</a>
   <a href="#">Favorites</a>
   <a href="#">Cart</a>
+  <a href="#">Settings</a>
   <a href="{% url 'logout' %}">Logout</a>
 </div>
 {% endblock %}
@@ -14,7 +15,6 @@
   {% comment %} <a href="{% url 'logout' %}">Logout</a>{% endblock %} {% endcomment %}
   <h1>Welcome to SD Shopping Center {{session.userinfo.name}}</h1>
   <p>Shop the latest trends in fashion, electronics, home goods and more!</p>
-  <button>Shop Now</button>
 </section>
 <section id="featured">
   <h2>Featured Products</h2>

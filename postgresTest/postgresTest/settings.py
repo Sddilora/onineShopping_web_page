@@ -19,7 +19,8 @@ environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-TEMPLATE_DIR = os.path.join(BASE_DIR, "webappexample", "templates")
+TEMPLATE_DIR = os.path.join(BASE_DIR, "testAuth", "templates")
+TEMPLATE_DIR = os.path.join(BASE_DIR, "testpages", "templates")
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "testAuth/static"),
 ]
@@ -38,6 +39,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'testpages',
     'testdb',
     'testAuth',
     'django.contrib.admin',

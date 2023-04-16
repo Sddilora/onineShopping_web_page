@@ -118,7 +118,7 @@ nav a:hover {
 /* Navbar container */
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color: #30937c;
   font-family: Arial;
 }
 
@@ -157,7 +157,7 @@ nav a:hover {
 /* Add a red background color to navbar links on hover */
 .navbar a:hover,
 .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: rgba(27, 105, 95, 0.804);
 }
 
 /* Dropdown content (hidden by default) */
@@ -173,7 +173,7 @@ nav a:hover {
 /* Links inside the dropdown */
 .dropdown-content a {
   float: none;
-  color: black;
+  color: #30937c;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
