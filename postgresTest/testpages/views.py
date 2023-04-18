@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-# from .models import Product
+from testinput.models import Product
 # from .forms import ProductForm
 
 # Create your views here.
 def mypage(request):
-    return render(request, "mypage.html", context={ "session": request.session.get("user") })
+    products = Product.objects.all()
+    return render(request, "mypage.html", context={ "session": request.session.get("user"), "products": products})
 
 # def product_list(request):
 #     user_info = request.session.get("user")
