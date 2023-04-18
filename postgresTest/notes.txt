@@ -3,4 +3,8 @@ migrate → The last step to submit or sent out our table into the database serv
 if page does not update css file press ctrl+F5
 To create an app: python manage.py startapp testdb
 
-models.py :: on_delete=models.CASCADE means that when the referenced object is deleted, all the objects that have a foreign key to it will also be deleted. For example, if you have a model Author and a model Book, where Book has a foreign key to Author, setting on_delete=models.CASCADE for the foreign key means that when an Author object is deleted, all the related Book objects will also be deleted.
+models.py =>
+- on_delete=models.CASCADE means that when the referenced object is deleted, all the objects that have a foreign key to it will also be deleted. For example, if you have a model Author and a model Book, where Book has a foreign key to Author, setting on_delete=models.CASCADE for the foreign key means that when an Author object is deleted, all the related Book objects will also be deleted.
+- One-to-one relations are defined using OneToOneField field of django.db.models.
+- Many-to-one relations are defined using ForeignKey field of django.db.models.
+- Many-to-many relations are defined using ManyToManyField field of django.db.models.

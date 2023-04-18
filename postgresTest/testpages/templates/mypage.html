@@ -160,6 +160,56 @@ body {
     background-color: #ff6600;
 }
 
+.messages-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 1.5;
+    
+}
+
+.message-success {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+  
+.message-danger {
+    background-color: #f2dede;
+    color: #a94442;
+    border: 1px solid #ebccd1;
+}
+  
+.message-warning {
+    background-color: #fcf8e3;
+    color: #8a6d3b;
+    border: 1px solid #faebcc;
+}
+  
+.message-info {
+    background-color: #d9edf7;
+    color: #31708f;
+    border: 1px solid #bce8f1;
+}
+
+.close {
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: 0.2;
+    filter: alpha(opacity=20);
+}
+
 {% endblock %}
 
 {% block dropdown-content %}
@@ -173,6 +223,33 @@ body {
 {% endblock %}
 
 {% block content %}
+
+{% if messages %}
+  <div class="messages-container" role="alert">
+    {% for message in messages %}
+      <div class="message-{{ message.tags }}">
+        <button type="button" class="close" data-dismiss="message" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        {{ message|safe }}
+      </div>
+    {% endfor %}
+  </div>
+  <script>
+    // Find all close buttons for messages
+    const closeButtons = document.querySelectorAll('.close')
+    
+    // For each close button, attach a click event listener that will hide its parent message element
+    closeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const message = button.parentNode
+        message.style.display = 'none'
+      })
+    })
+  </script>
+  
+{% endif %}
+
 <div class="header-container">
     <div class="header">
         <img class="logo-mypage" src="https://img.icons8.com/ios-glyphs/1x/github-2.png" alt="Logo">
@@ -224,10 +301,9 @@ body {
 				<button>Edit Product</button>
 			</div>
 			<div class="product" style="padding-top:90px">
-				<img src="https://img.icons8.com/color/1x/add-product.png" alt="Add Product">
-				
+				<img src="https://img.icons8.com/color/1x/add-product.png" alt="Add Product">	
 				<p></p>
-				<button>Add Product</button>
+				<button onclick="window.location.href='{% url 'testinput/form' %}';">Add Product</button>
 			</div>
 		</div>
 	</div>

@@ -39,6 +39,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'testinput',
     'django_extensions',
     'testpages',
     'testdb',

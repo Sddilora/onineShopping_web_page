@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Product{% endblock %}
+
+
+{% block style %}
+  .form-container {
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  legend {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  input,
+  textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <form method="POST">
+      <fieldset>
+        <legend>Product</legend>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </fieldset>
+    </form>
+</div>
+
+{% endblock %}
+
+{% block dropdown-content %}
+<div class="dropdown-content">
+  <a href="{% url 'testpages/mypage' %}">My Page</a>
+  <a href="#">Favorites</a>
+  <a href="#">Cart</a>
+  <a href="#">Settings</a>
+  <a href="{% url 'logout' %}">Logout</a>
+</div>
+{% endblock %}
+

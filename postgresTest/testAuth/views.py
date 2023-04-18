@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from testinput.models import Owner
 
 # Create your views here.
 import json
