@@ -7,8 +7,9 @@ class Owner(models.Model):
     
 class Product(models.Model):
     owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=100)
     price = models.FloatField()
     stock = models.IntegerField()
     description = models.TextField()
-    image_url = models.CharField(max_length=2083)
+    image_url = models.CharField(max_length=100)
+    category = models.CharField(max_length=100) 

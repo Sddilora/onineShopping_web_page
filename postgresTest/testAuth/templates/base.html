@@ -12,7 +12,22 @@
   <body>
     <div class="navbar">
       <a href="{% url 'home' %}">Home</a>
-      <a href="#">Shop</a>
+      <div style="float:left", class="dropdown">
+        <button class="dropbtn" >Shop
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Women</a>
+          <a href="#">Men</a>
+          <a href="#">Kids & Baby</a>
+          <a href="#">Home</a>
+          <a href="#">Bed & Bath</a>
+          <a href="#">Jewelery</a>
+          <a href="#">Electronics</a>
+          <a href="#">Arts & Crafts</a>
+          <a href="#">See All</a>
+        </div>
+      </div>
       <a href="#">About</a>
       <div class="dropdown">
         <button class="dropbtn" >My Account

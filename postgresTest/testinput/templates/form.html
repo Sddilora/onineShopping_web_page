@@ -38,7 +38,8 @@
   }
 
   input,
-  textarea {
+  textarea,
+  select[name=category] {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -58,6 +59,10 @@
 
   button[type="submit"]:hover {
     background-color: #3e8e41;
+  }
+
+  select[name=category]{
+    font-size: 1.0em;
   }
 {% endblock %}
 

@@ -16,10 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
+from testreact import views
+
+router = routers.DefaultRouter()
+router.register(r'todos', views.TodoView, 'todo')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('testAuth.urls')),
     path('testpages/', include('testpages.urls')),
-    path('testinput/', include('testinput.urls'))
+    path('testinput/', include('testinput.urls')),
+    path('api/', include(router.urls)),
 ]
