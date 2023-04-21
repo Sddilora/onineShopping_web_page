@@ -93,10 +93,10 @@ WSGI_APPLICATION = 'postgresTest.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env("DB_NAME"), 
+        'NAME': env("DB_NAME"),
         'USER': env("DB_USER"),
         'PASSWORD': env("DB_PASSWORD"),
-        'HOST': env("DB_HOST"), 
+        'HOST': env("DB_HOST"),
         'PORT': env("DB_PORT"),
     }
 }
@@ -148,5 +148,6 @@ AUTH0_CLIENT_ID = env("AUTH0_CLIENT_ID")
 AUTH0_CLIENT_SECRET = env("AUTH0_CLIENT_SECRET")
 
 CORS_ORIGIN_WHITELIST = [
-     'http://localhost:3000'
+     'http://127.0.0.1:3000',
+     'http://localhost:3000',
 ]
